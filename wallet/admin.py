@@ -14,6 +14,8 @@ from .models import Reward
 class CustomerAdmin(admin.ModelAdmin):
     list_display=('first_name','last_name','age','email')
     search_fields=("first_name","last_name",)
+    
+
 
 admin.site.register(Customer,CustomerAdmin)
 admin.site.register(Account)
@@ -24,7 +26,7 @@ admin.site.register(Notification)
 admin.site.register(Receipt)
 admin.site.register(Loan)
 admin.site.register(Reward)
-admin.site.register(Third_party)
+admin.site.register(Third_party,)
 
 # Register your models here.
 
