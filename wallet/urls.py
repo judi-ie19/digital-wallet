@@ -9,10 +9,10 @@ urlpatterns=[
     path("registertransaction/",register_transaction,name="registation"),
     path("registercard/",register_card,name="registation"),
     path("registerthird_party/",register_thirdparty,name="registation"),
-    path("registernotification_/",register_notification,name="registation"),
-    path("registerreceipt_/",register_receipt,name="registation"),
-    path("registerloan_/",register_loan,name="registation"),
-    path("registerreward_/",register_reward,name="registation"),
+    path("registernotification/",register_notification,name="registation"),
+    path("registerreceipt/",register_receipt,name="registation"),
+    path("registerloan/",register_loan,name="registation"),
+    path("registerreward/",register_reward,name="registation"),
 
 
 

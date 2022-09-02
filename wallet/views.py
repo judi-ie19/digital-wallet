@@ -29,7 +29,7 @@ def register_thirdparty(request):
     return render(request,'wallet/register_thirdparty.html',{"form":form})
 
 def register_notification(request):
-    form =NotificationRegistrationForm()
+    form = NotificationRegistrationForm()
     return render(request,'wallet/register_notification.html',{"form":form})
 
 
