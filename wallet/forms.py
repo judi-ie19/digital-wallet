@@ -4,7 +4,7 @@ from .models import Customer, Notification, Transaction,Wallet,Account,Card,Thir
 
 class CustomerRegistrationForm(forms.ModelForm):
     class Meta:
-        model = Customer
+        model = Customer      
         fields="__all__"
       
 class WalletRegistrationForm(forms.ModelForm):

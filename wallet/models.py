@@ -1,12 +1,5 @@
-from ast import In
-from datetime import date, datetime
-import email
-from email.headerregistry import Address
-from locale import currency
-import string
-from time import time
-from turtle import mode
-from unicodedata import name
+
+from django.utils import timezone
 from django.db import models
 
 # Create your models here.
@@ -22,7 +15,7 @@ class Wallet(models.Model):
     balance=models.IntegerField()
     customer=models.ForeignKey('Customer',on_delete=models.CASCADE,related_name='wallet_customer')
     amount=models.IntegerField()
-    time=models.DateTimeField(null=True)
+    time=models.DateTimeField(default=timezone.now)
     # currency=models.ForeignKey('currency',on_delete=models.CASCADE,related_name='Wallet_currency')
     status=models.CharField(max_length=20)
 
@@ -31,7 +24,7 @@ class Account(models.Model):
     account_number=models.IntegerField()
     account_type=models.CharField(max_length=20)
     account_balance=models.IntegerField()
-    accountr_name=models.CharField(max_length=20)
+    account_name=models.CharField(max_length=20)
     wallet=models.ForeignKey('Wallet',on_delete=models.CASCADE,related_name='Account_wallet',null=True)
    
 class Transaction(models.Model):
@@ -104,3 +97,4 @@ class Reward(models.Model):
 #     origin=models.CharField(max_length=15)
 #     Symbol=models.CharField(max_length=15)
 #     amount=models.IntegerField()
+
