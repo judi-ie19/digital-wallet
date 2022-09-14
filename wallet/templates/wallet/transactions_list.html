@@ -1,0 +1,26 @@
+<table>
+    <th>
+        <td>transaction_ref</td>
+        <td>transaction_amount</td>
+        <td>transaction_name</td>
+        <td>transaction_type</td>
+        <td>transaction_charge</td>
+        <td>date_and_time</td>
+        <td>receipt</td>
+
+       
+        
+
+    </th>
+        {% for Transaction in Transactions%}
+        <tr>
+        <td>{{Transaction.transaction_ref}}</td>
+        <td>{{Transaction.transaction_amount}}</td>
+        <td>{{Transaction.transaction_name}}</td>
+        <td>{{Transaction.transaction_type}}</td>
+        <td>{{Transaction.transaction_charge}}</td>
+        <td>{{Transaction.date_and_time}}</td>
+        <td>{{Transaction.receipt}}</td>
+        </tr>
+        {% endfor %}
+        </table>
