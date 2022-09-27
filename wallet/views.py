@@ -1,9 +1,8 @@
-import re
 from django.shortcuts import render
-from .models import Account, Card, Customer, Loan, Notification, Receipt, Transaction
+from .models import Account, Card, Customer, Loan, Notification, Receipt, Reward, Transaction,Wallet,Third_party
 
 
-from wallet.models import Third_party, Wallet
+from wallet.models import Third_party, Wallet,Transaction,Notification,Loan,Receipt,Customer,Card,Account
 from .forms import CustomerRegistrationForm,WalletRegistrationForm,Acount_RegistrationForm,TransactionRegistrationForm,CardRegistrationForm,ThirdpartyRegistrationForm,NotificationRegistrationForm,ReceiptRegistrationForm,LoanRegistrationForm,RewardRegistrationForm
 
 # Create your views here.
@@ -84,10 +83,10 @@ def register_card(request):
 
 
 def list_thirdparty(request):
-    Third_partys =Third_party.objects.all()
-    return render(request,'wallet/thirdpartys_list.html',{"Third_partys":Third_partys})
+    third_partys =Third_party.objects.all()
+    return render(request,'wallet/thirdpartys_list.html',{"third_partys":third_partys})
 
-def register_thirdpart(request):
+def register_thirdparty(request):
     if request.method=="POST":
         form=ThirdpartyRegistrationForm(request.POST)
         if form.is_valid():
@@ -95,7 +94,7 @@ def register_thirdpart(request):
     else:
         form=ThirdpartyRegistrationForm
 
-    return render(request,'wallet/register_thirdpart.html',{"form":form})
+    return render(request,'wallet/register_thirdparty.html',{"form":form})
 
 
 def list_notification(request):
@@ -145,9 +144,9 @@ def register_loan(request):
     return render(request,'wallet/register_loan.html',{"form":form})
 
 
-def register_reward(request):
-    form =RewardRegistrationForm()
-    return render(request,'wallet/register_reward.html',{"form":form})
+def list_reward(request):
+    rewards =Reward.objects.all()
+    return render(request,'wallet/rewards_list.html',{"rewards":rewards})
 
 def register_reward(request):
     if request.method=="POST":

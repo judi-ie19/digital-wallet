@@ -1,0 +1,23 @@
+<table>
+    <th>
+        <td>transaction</td>
+        <td>customer_Id</td>
+        <td>points</td>
+        <td>gender</td>
+        <td>third_party</td>
+        <td>date</td>
+        
+    </th>
+        {% for reward in rewards%}
+        <tr>
+        <td>{{reward.transaction}}</td>
+        <td>{{reward.customer_Id}}</td>
+        <td>{{reward.points}}</td>
+        <td>{{reward.gender}}</td>
+        <td>{{reward.third_party}}</td>
+        <td>{{reward.date}}</td>
+
+
+        </tr>
+        {% endfor %}
+        </table>
